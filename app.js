@@ -94,6 +94,9 @@ app.use('/social', socialRoutes);
 const imagePostRoutes = require('./routes/social/imagePost');
 app.use('/social', imagePostRoutes);
 
+const userRoutes = require('./routes/user');
+app.use('/user', userRoutes);
+
 const profileRoutes = require('./routes/profile');
 app.use('/profile', profileRoutes)
 
