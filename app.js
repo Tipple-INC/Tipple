@@ -88,8 +88,11 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
-const socialRoutes = require('./routes/socialPage');
+const socialRoutes = require('./routes/social/socialPage');
 app.use('/social', socialRoutes);
+
+const imagePostRoutes = require('./routes/social/imagePost');
+app.use('/social', imagePostRoutes);
 
 const profileRoutes = require('./routes/profile');
 app.use('/profile', profileRoutes)

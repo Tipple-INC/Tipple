@@ -7,8 +7,8 @@ const imagePostSchema = new Schema({
   region: String,
   score: Number,
   username: String,
-  picName: String,
-  picPath: String
+  picName: {type: String, default: "bottle_with_glass"},
+  picPath: {type: String, default: "/images/bottle_with_glass.jpg"}
 }, {
   timestamps: {
     createdAt: 'created_at',

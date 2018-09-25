@@ -8,20 +8,6 @@ const uploadCloud = require("../config/cloudinary.js");
    res.render('user/profile');
 });
 
-router.post('/profile', uploadCloud.single('photo'), (req, res, next) => {
-  const { title, description } = req.body;
-  const imgPath = req.file.url;
-  const imgName = req.file.originalname;
-  const newMovie = new Movie({title, description, imgPath, imgName})
-  newMovie.save()
-  .then(movie => {
-    res.redirect('/')
-  })
-  .catch(error => {
-    console.log(error)
-  })
-});
-
 
 
 
