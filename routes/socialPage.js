@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 const express = require("express");
 const passport = require('passport');
 const User = require("../models/User");
@@ -24,4 +21,3 @@ router.get('/wines', (req, res, next) => {
 
 
 module.exports = router;
->>>>>>> 243058755846e1fb04310240087fcea7a4026a78
