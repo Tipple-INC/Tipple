@@ -7,7 +7,7 @@ const uploadCloud = require("../config/cloudinary.js");
 
 
 router.get("/:id", ensureLoggedIn(), (req, res, next) => {
-
+  
   res.render("user/profile");
 });
 

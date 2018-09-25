@@ -75,7 +75,6 @@ app.use(flash());
 require('./passport')(app);
 
 app.use((req,res,next) =>{
-  console.log(req.user);
   res.locals.user = req.user;
   res.locals.bgclass = "default"
   next();
