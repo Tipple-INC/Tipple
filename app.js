@@ -77,6 +77,7 @@ require('./passport')(app);
 app.use((req,res,next) =>{
   console.log(req.user);
   res.locals.user = req.user;
+  res.locals.bgclass = "default"
   next();
 })
     
@@ -89,6 +90,9 @@ app.use('/auth', authRoutes);
 
 const socialRoutes = require('./routes/socialPage');
 app.use('/social', socialRoutes);
+
+const profileRoutes = require('./routes/profile');
+app.use('/profile', profileRoutes)
 
 // const forms = require('./routes/form');
 // app.use('/forms', forms);

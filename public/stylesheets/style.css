@@ -1,8 +1,25 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.logo {
+  border: 1px solid red;
+  width: 80%;
+  margin: 50px auto;
+  text-align: center; }
+
+.logoImg {
+  width: 400px; }
+
+.homeButton {
+  border: 0.5px solid green;
+  padding: 10px;
+  text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

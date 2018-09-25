@@ -3,7 +3,9 @@ const router  = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  res.render('index');
+  res.render('index', {
+    bgclass:'mainbg'
+  });
 });
 
 router.get('/form', (req, res, next) => {

@@ -1,2 +1,11 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="logo">
+  <h1>TIPPLE</h1>
+{{!-- <img class="logoImg" src="/images/logo.png" alt="Logo Tipple"> --}}
+{{#if user}}
+{{else}}
+<a class="homeButton" href="/auth/login">Login</a>
+<a class="homeButton" href="/auth/signup">Signup</a>
+{{/if}}
+</div>
+
+
