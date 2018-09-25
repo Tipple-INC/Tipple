@@ -3,7 +3,7 @@ const passport   = require('passport');
 const router     = express.Router();
 const uploadCloud = require('../../config/cloudinary.js');
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
-const ImagePost = require('../../models/imagePost.js');
+const ImagePost = require('../../models/ImagePost.js');
 
 
 router.get('/postImage', ensureLoggedIn('/login'), (req, res) => {
