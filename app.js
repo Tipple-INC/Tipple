@@ -91,6 +91,9 @@ app.use('/auth', authRoutes);
 const socialRoutes = require('./routes/socialPage');
 app.use('/social', socialRoutes);
 
+const userRoutes = require('./routes/user');
+app.use('/user', userRoutes);
+
 const profileRoutes = require('./routes/profile');
 app.use('/profile', profileRoutes)
 
