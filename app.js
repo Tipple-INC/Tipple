@@ -81,8 +81,9 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
-// const forms = require('./routes/form');
-// app.use('/forms', forms);
-      
+const socialPage = require('./routes/socialPage');
+app.use('/social', socialPage);
+
+    
 
 module.exports = app;
