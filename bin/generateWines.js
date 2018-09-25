@@ -109,7 +109,7 @@ Wine.deleteMany()
         region: e.appellation,
         color: e.color,
         vintage: e.vintage,
-        score: e.score
+        rating: e.score
     }));
 })
 .then( wineData => {
