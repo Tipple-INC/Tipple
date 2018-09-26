@@ -5,6 +5,7 @@ const userSchema = new Schema({
   username: String,
   password: String,
   email: String,
+  wishlist: {type: Array, default: []},
   imgName: {type: String, default: 'default-avatar.jpeg'},
   imgPath: {type: String, default: '/images/default-avatar.jpeg'}
 }, {
