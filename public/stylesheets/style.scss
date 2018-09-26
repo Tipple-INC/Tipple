@@ -1,3 +1,7 @@
+@import 'c.navigation';
+@import 'c.header';
+
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -26,6 +30,13 @@ a {
   border: 0.5px solid green;
   padding: 10px;
   text-decoration: none;
+}
+
+#upload_button {
+  display: inline-block;
+}
+#upload_button input[type=file] {
+  display:none;
 }
 
 // .mainbg {

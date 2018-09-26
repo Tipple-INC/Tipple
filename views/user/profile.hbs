@@ -26,13 +26,18 @@
 </div>
   {{/each}}
 
-
-<h2>Upload your picture</h2>
-<form action="/profile/uploadCloud" method="post" enctype="multipart/form-data">
-  <div class="form-group">
-
-    <label>Photo</label>
-    <input type="file" name="photo" class="form-control">
-    <input type="submit" value="SAVE">
-  </div>
-</form>
+    
+    <h2>Upload your picture</h2>
+    <form action="/profile/uploadCloud" method="post" enctype="multipart/form-data">
+    <div class="form-group" id="upload_button">      
+      <label>
+      <input type="file" ngf-select ng-model="new_files" ng-change="fs.uploadFiles(new_files)" multiple>
+      <span class="btn btn-primary">Upload picture</span>
+    </label>
+      
+      <input type="file" name="photo" class="form-control">
+    
+      <input type="submit" class="btn btn-primary" value="Save">
+    </div>   
+    </form>
+    
