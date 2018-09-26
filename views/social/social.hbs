@@ -1,24 +1,33 @@
 <h1>These are the wines</h1>
 
-{{#each wines}}
+<div class="d-flex flex-wrap justify-content-around">
+
+{{#each wished}}
+
 <form action="/social/wishlist" method="POST">
-<input type="hidden" name="wineID" value="{{_id}}">
+<input type="hidden" name="wineID" value="{{wine._id}}">
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
+  <img class="card-img-top" src="{{wine.imgPath}}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{wineName}}</h5>
+    <h5 class="card-title">{{wine.wineName}}</h5>
     <p class="card-text">User comments</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Region: {{region}}</li>
-    <li class="list-group-item">Vintage: {{vintage}}</li>
-    <li class="list-group-item">Color: {{color}}</li>
+    <li class="list-group-item">Region: {{wine.region}}</li>
+    <li class="list-group-item">Vintage: {{wine.vintage}}</li>
+    <li class="list-group-item">Color: {{wine.color}}</li>
   </ul>
   <div class="card-body">
     <a href="#" class="card-link">Card link</a>
+    {{#if isWished}}
+      <p>Already wished</p>
+    {{else}}
     <button type="submit" class="btn btn-primary">Add to wishlist</button>
+    {{/if}}
   </div>
   </form>
 </div>
 
 {{/each}}
+
+</div>

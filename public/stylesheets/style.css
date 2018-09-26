@@ -27,5 +27,8 @@ a {
 
 #upload_button input[type=file] {
   display: none; }
+  
+.profilePic {
+  height: 150px; }
 
 /*# sourceMappingURL=style.css.map */

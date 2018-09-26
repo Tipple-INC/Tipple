@@ -7,13 +7,13 @@ const uploadCloud = require("../config/cloudinary.js");
 
 
 router.get("/:id", ensureLoggedIn(), (req, res, next) => {
-  
-  res.render("user/profile");
-});
 
-router.get("/",  (req, res, next) => {
-  
-  res.render("user/profile");
+  User.findById(req.params.id)
+  .populate('wishlist')
+  .then(wines => {
+    console.log(wines.wishlist)
+    res.render("user/profile", {wine: wines.wishlist});
+  })
 });
 
 router.get('/:id/update', ensureLoggedIn(), (req, res, next) => {
