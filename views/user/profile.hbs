@@ -11,7 +11,10 @@
 <a href="/profile/{{user._id}}/update">Update your details</a>
 
 <h3>Wishlist:</h3>
-  {{#each user.wishlist}}
+
+<div class="d-flex flex-wrap justify-content-around">
+
+  {{#each wine}}
   <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
   <div class="card-body">
@@ -24,7 +27,11 @@
     <li class="list-group-item">Color: {{color}}</li>
   </ul>
 </div>
+
   {{/each}}
+
+</div>
+
 
 
 <h2>Upload your picture</h2>
