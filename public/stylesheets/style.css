@@ -36,4 +36,13 @@ a {
   width: 100%;
 }
 
+
+img .d-block {
+  width: 685px;
+  height: 250px
+}
+
+.info {
+  margin-top: 50px
+}
 /*# sourceMappingURL=style.css.map */
