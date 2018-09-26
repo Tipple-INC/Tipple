@@ -10,6 +10,10 @@
 
 <a href="/profile/{{user._id}}/update">Update your details</a>
 
+{{#if owner}}
+<a href="/profile/{{user._id}}/store">See Your Store Information</a>
+{{/if}}
+
 <h3>Wishlist:</h3>
 
 <div class="d-flex flex-wrap justify-content-around">
@@ -38,10 +42,6 @@
       <input type="file" ngf-select ng-model="new_files" ng-change="fs.uploadFiles(new_files)" multiple>
       <span class="btn btn-primary">Upload picture</span>
     </label>
-      
-      <input type="file" name="photo" class="form-control">
-    
-      <input type="submit" class="btn btn-primary" value="Save">
     </div>   
     </form>
     

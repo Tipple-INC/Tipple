@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const storeSchema = new Schema({
+  ownerID: String,
   storename: String,
-  direction: String,
-  imgName: String,
-  imgPath: String
+  direction1: String,
+  direction2: String,
+  city: String,
+  zip: String
 }, {
   timestamps: {
     createdAt: 'created_at',

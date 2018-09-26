@@ -25,9 +25,13 @@ router.get("/signup", ensureLoggedOut(), (req, res, next) => {
 });
 
 router.post("/signup", ensureLoggedOut(),  (req, res, next) => {
+
+  
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
+  const role = req.body.storeowner;
+
   if (username === "" || password === "" || email === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
@@ -45,7 +49,8 @@ router.post("/signup", ensureLoggedOut(),  (req, res, next) => {
     const newUser = new User({
       username,
       email,
-      password: hashPass
+      password: hashPass,
+      role
     });
 
     newUser.save()
