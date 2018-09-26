@@ -22,9 +22,15 @@
           <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/social/wines">News Feed</a>
+          <a class="nav-link" href="/social/news">News Feed</a>
         </li>
         {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link" href="/stores">Featured Wine Stores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/social/wines">Wines</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/profile/{{user._id}}">My Profile</a>
         </li>
@@ -42,8 +48,8 @@
       </ul>
     </nav>
     </header>
-{{!-- 
-    <div class="container"> --}}
+
+    <div class="container">
 
       {{{body}}}
 

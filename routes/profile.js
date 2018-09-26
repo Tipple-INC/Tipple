@@ -5,6 +5,7 @@ const User = require('../models/User')
 const Store = require('../models/Store')
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const uploadCloud = require("../config/cloudinary.js");
+const GoogleMapsAPI = require("googlemaps");
 
 
 function checkRoles(role) {
@@ -57,12 +58,43 @@ router.get("/:id/store/create", ensureLoggedIn(), checkOwner, (req, res, next) =
 
 router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
 
+  
+  var publicConfig = {
+    key: 'AIzaSyBWpcXiHEvP6IX3iEto4Ghz_O_-aiMiCJ8',
+    stagger_time:       1000, // for elevationPath
+    encode_polylines:   false,
+    secure:             true, // use https
+  };
+  var gmAPI = new GoogleMapsAPI(publicConfig);
+  
   const ownerID = req.params.id;
   const storename = req.body.storename;
   const direction1 = req.body.direction1;
   const direction2 = req.body.direction2;
   const city = req.body.city;
   const zip = req.body.zip;
+  const address = `${storename}, ${direction1}, ${direction2}, ${city}, ${zip}`;
+  var geocodeParams = {
+    "address":    address,
+    // "components": "components=country:GB",
+    // "bounds":     "55,-1|54,1",
+    // "language":   "en",
+    // "region":     "uk"
+  };
+  
+  getCoordinates = (( address, callback ) => {
+  gmAPI.geocode(geocodeParams, function(err, result){
+    var coordinates;
+      console.log(result)
+      lng = result.results[0].geometry.location.lng;
+      lat = result.results[0].geometry.location.lat;
+      coordinates = [lat, lng]
+      callback(coordinates)
+  });
+  });
+
+  const coordinates = getCoordinates(address, function(coordinates) { console.log(coordinates[0], coordinates[1])});
+
 
   if (ownerID === "" || storename === "" || direction1 === "" || direction2 === "" || city === "" || zip === "") {
     res.render("user/storeCreate", { message: "Please fill all fields" });
@@ -81,7 +113,8 @@ router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
       direction1,
       direction2,
       city,
-      zip
+      zip,
+      coordinates
     });
 
     newStore.save()

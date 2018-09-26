@@ -97,7 +97,10 @@ const userRoutes = require('./routes/user');
 app.use('/user', userRoutes);
 
 const profileRoutes = require('./routes/profile');
-app.use('/profile', profileRoutes)
+app.use('/profile', profileRoutes);
+
+const storeRoutes = require('./routes/stores');
+app.use('/stores', storeRoutes);
 
 // const forms = require('./routes/form');
 // app.use('/forms', forms);

@@ -27,22 +27,9 @@ a {
 
 #upload_button input[type=file] {
   display: none; }
-  
-.profilePic {
-  height: 150px; }
 
 #map {
   height: 500px;
-  width: 100%;
-}
+  width: 100%; }
 
-
-img .d-block {
-  width: 685px;
-  height: 250px
-}
-
-.info {
-  margin-top: 50px
-}
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,20 @@
 const express = require("express");
 const passport = require('passport');
 const User = require("../../models/User");
-const Wine = require("../../models/Wine")
+const Wine = require("../../models/Wine");
+const ImagePost = require ("../../models/ImagePost");
 const router = express.Router();
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
+
+
+router.get('/news', (req, res, next) => {
+
+  ImagePost.find()
+  .then(posts => {
+    
+    res.render('social/news', {posts})
+  });
+});
 
 
 router.get('/wines', (req, res, next) => {
@@ -26,7 +37,7 @@ router.get('/wines', (req, res, next) => {
     // console.log("hello");
     // console.log(processedWines);
     res.render('social/social', {wished: processedWines})
-  });
+  })
 
 });
 

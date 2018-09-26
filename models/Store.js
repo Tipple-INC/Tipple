@@ -7,7 +7,8 @@ const storeSchema = new Schema({
   direction1: String,
   direction2: String,
   city: String,
-  zip: String
+  zip: String,
+  coordinates: Array
 }, {
   timestamps: {
     createdAt: 'created_at',
