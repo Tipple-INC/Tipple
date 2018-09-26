@@ -47,6 +47,7 @@ router.post('/:id/update', ensureLoggedIn(), (req, res, next) => {
 //================== STORE INFORMATION ============================
 
 router.get("/:id/store", ensureLoggedIn(), checkOwner, (req, res, next) => {
+
   res.render("user/store");
 });
 
