@@ -1,9 +1,10 @@
 <h1>These are the wines</h1>
 
 {{#each wines}}
-
+<form action="/social/wishlist" method="POST">
+<input type="hidden" name="wineID" value="{{_id}}">
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+  <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{wineName}}</h5>
     <p class="card-text">User comments</p>
@@ -15,8 +16,9 @@
   </ul>
   <div class="card-body">
     <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <button type="submit" class="btn btn-primary">Add to wishlist</button>
   </div>
+  </form>
 </div>
 
 {{/each}}

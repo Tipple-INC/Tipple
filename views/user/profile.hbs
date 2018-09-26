@@ -1,10 +1,38 @@
-    
-    <h2>Upload your picture</h2>
-    <form action="/profile/uploadCloud" method="post" enctype="multipart/form-data">
-    <div class="form-group">      
-      
-      <label>Photo</label>
-      <input type="file" name="photo" class="form-control">
-      <input type="submit" value="SAVE">
-    </div>   
-    </form>
+<div class="intro">
+  <div class="text-center">
+    {{#if user}}
+    <img class="img-thumbnail profilePic" src="{{user.imgPath}}" alt="">
+    {{/if}}
+  </div>
+</div>
+
+<h2>{{user.username}}, welcome to your personal page.</h2>
+
+<a href="/profile/{{user._id}}/update">Update your details</a>
+
+<h3>Wishlist:</h3>
+  {{#each user.wishlist}}
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{wineName}}</h5>
+    <p class="card-text">User comments</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Region: {{region}}</li>
+    <li class="list-group-item">Vintage: {{vintage}}</li>
+    <li class="list-group-item">Color: {{color}}</li>
+  </ul>
+</div>
+  {{/each}}
+
+
+<h2>Upload your picture</h2>
+<form action="/profile/uploadCloud" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+
+    <label>Photo</label>
+    <input type="file" name="photo" class="form-control">
+    <input type="submit" value="SAVE">
+  </div>
+</form>

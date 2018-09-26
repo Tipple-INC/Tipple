@@ -9,8 +9,8 @@ const wineSchema = new Schema({
   region: String,
   rating: Number,
   price: String,
-  imgName: String,
-  imgPath: String
+  imgName: {type: String, default: "bottle_with_glass"},
+  imgPath: {type: String, default: "/images/bottle_with_glass.jpg"}
 }, {
   timestamps: {
     createdAt: 'created_at',

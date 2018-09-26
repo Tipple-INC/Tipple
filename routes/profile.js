@@ -11,6 +11,27 @@ router.get("/:id", ensureLoggedIn(), (req, res, next) => {
   res.render("user/profile");
 });
 
+router.get("/",  (req, res, next) => {
+  
+  res.render("user/profile");
+});
+
+router.get('/:id/update', ensureLoggedIn(), (req, res, next) => {
+    res.render("user/update")
+});
+
+router.post('/:id/update', ensureLoggedIn(), (req, res, next) => {
+  console.log(req.params.id);
+  const { username, email, password } = req.body;
+  User.update({_id: req.params.id}, { $set: {username, email, password }}, { new: true })
+  .then((user) => {
+    res.redirect('/profile/:id')
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+});
+
 
 
 router.post("/uploadCloud", uploadCloud.single("photo"), (req, res, next) => { 
