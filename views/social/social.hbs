@@ -3,7 +3,7 @@
 {{#each wines}}
 <form action="/social/wishlist" method="POST">
 <input type="hidden" name="wineID" value="{{_id}}">
-<div class="card" style="width: 18rem;">
+<div class="card justify-content-sm-between" style="width: 18rem;">
   <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{wineName}}</h5>

@@ -28,4 +28,13 @@ a {
 #upload_button input[type=file] {
   display: none; }
 
+
+img .d-block {
+  width: 685px;
+  height: 250px
+}
+
+.info {
+  margin-top: 50px
+}
 /*# sourceMappingURL=style.css.map */
