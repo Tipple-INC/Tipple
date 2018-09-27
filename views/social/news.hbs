@@ -1,0 +1,35 @@
+<h1>News Feed</h1>
+
+<a href="/social/postImage">Post a Wine!</a>
+
+<div class="d-flex flex-wrap justify-content-around">
+
+{{#each posts}}
+
+<form action="/social/wishlist" method="POST">
+<input type="hidden" name="wineID" value="{{_id}}">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{picPath}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{wineName}}</h5>
+    <p class="card-text">Posted by: {{username}}</p>
+    <p class="card-text">User comments</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Region: {{region}}</li>
+    <li class="list-group-item">Vintage: {{vintage}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    {{#if isWished}}
+      <p>Already wished</p>
+    {{else}}
+    <button type="submit" class="btn btn-primary">Add to wishlist</button>
+    {{/if}}
+  </div>
+  </form>
+</div>
+
+{{/each}}
+
+</div>

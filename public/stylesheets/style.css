@@ -28,4 +28,8 @@ a {
 #upload_button input[type=file] {
   display: none; }
 
+#map {
+  height: 500px;
+  width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

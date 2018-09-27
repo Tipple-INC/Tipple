@@ -1,0 +1,18 @@
+<h1>Featured Wine Stores</h1>
+
+<div class="d-flex flex-wrap justify-content-around">
+
+{{#each stores}}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{storename}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{city}}</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="/stores/{{_id}}" class="card-link">Find out more...</a>
+  </div>
+</div>
+
+{{/each}}
+
+</div>
