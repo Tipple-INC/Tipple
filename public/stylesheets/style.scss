@@ -48,13 +48,13 @@ a {
 }
 
 .logo {
-  border: 1px solid red;
+ 
   width: 80%;
   margin: 50px auto;
   text-align: center;
   position: absolute;
   top: 100px;
-  position: relative;
+  position: aboslute;
 }
 
 .logoImg {
@@ -62,15 +62,23 @@ a {
 }
 
 .homeButton {
-  border: 0.5px solid green;
+  color: black;
+  background-color: #ffc23d;
   padding: 10px;
   text-decoration: none;
+  bottom: 200px;
+}
+
+.homeButton:hover {
+  color: yellow
+
 }
 
 .fit {
   width: 100%;
   object-fit: cover;
   height: 50vh;
+  filter: grayscale(50%);
 }
 
 .intro {
@@ -140,4 +148,15 @@ a {
 #map {
   height: 500px;
   width: 100%;
+}
+
+.fit-logo {
+  width: 100%;
+  height: 210px; 
+  font-family: 'Pacifico', cursive;
+  color: rgba(148,40,50,1); 
+} 
+
+.fit-logo h1 {
+  font-size: 98px
 }
