@@ -1,4 +1,7 @@
+<div class="wrapper">
+
 <h2>Update</h2>
+
 <form action="/profile/{{user._id}}/update" method="POST" id="form-container">
   <div class="form-group">
     <label for="username">Username</label>
@@ -13,10 +16,12 @@
     <input type="password" class="form-control" name="password" placeholder="Password">
   </div>
 
-  </div>
+  
   <br>
   {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
-  <button type="submit" class="btn btn-primary">Update Details</button>
+  <button type="submit" class="btn btn-primary homeButton">Update Details</button>
 </form>
+
+</div>

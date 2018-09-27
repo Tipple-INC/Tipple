@@ -16,8 +16,7 @@ a {
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 10px 10px -10px #999;
-  padding: 5px 0;
-  /* the rest of your styling */ }
+  padding: 5px 0; }
 
 #carousel {
   position: relative;
@@ -47,14 +46,17 @@ a {
   width: 400px; }
 
 .homeButton {
-  color: black;
+  color: #932832;
   background-color: #ffc23d;
   padding: 10px;
   text-decoration: none;
-  bottom: 200px; }
+  bottom: 200px;
+  font-family: 'Pacifico', cursive;
+  border: none; }
 
 .homeButton:hover {
-  color: yellow; }
+  color: #932832;
+  background-color: #ffc107a3; }
 
 .fit {
   width: 100%;
@@ -126,5 +128,12 @@ a {
 
 .fit-logo h1 {
   font-size: 98px; }
+
+.forms .wrapper {
+  margin-right: 50px;
+  margin-left: 80px; }
+
+.wrapper h2 {
+  font-family: 'Pacifico', cursive; }
 
 /*# sourceMappingURL=style.css.map */
