@@ -27,15 +27,15 @@
   {{/if}}
   </div>
 
-  <h5>Your Wishlist:</h5>
+  <h5 class="subtitle">Wishlist:</h5>
 <div class="infoBox d-flex flex-wrap flex-row">
 <div class="wishlist d-flex flex-wrap flex-row">
   <div class="d-flex flex-wrap flex-row align-items-start justify-content-around">
 
     {{#each wine}}
     <div class="card" style="width: 18rem;">
-      <form action="/profile/{{_id}}/removeWish" method="POST">
-      <button type="submit" >remove</button>
+      <form class="removeWish" action="/profile/{{_id}}/removeWish" method="POST">
+      <button class="btn removeButton" type="submit" >remove</button>
       </form>
       <img class="card-img-top wishCardImg" src="{{imgPath}}" alt="Card image cap">
       <div class="card-body">

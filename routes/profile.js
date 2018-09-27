@@ -42,7 +42,7 @@ router.post("/:id/removeWish", (req, res, next) => {
   const wine = req.params.id;
   User.findByIdAndUpdate({_id: req.user.id}, { $pull: { wishlist: wine } })
   .then (() => {
-    res.render("user/profile");
+    res.redirect(`/profile/${req.user.id}`);
   })
 });
 
@@ -55,7 +55,8 @@ router.get('/:id/update', ensureLoggedIn(), (req, res, next) => {
 router.post('/:id/update', ensureLoggedIn(), (req, res, next) => {
   const { username, email, password } = req.body;
   User.update({_id: req.params.id}, { $set: {username, email, password }}, { new: true })
-  .then((user) => {
+  .then(() => {
+    const id = req.user.id;
     res.redirect('/profile/:id')
   })
   .catch((error) => {
@@ -142,7 +143,8 @@ router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
   
       newStore.save()
       .then(() => {
-        res.redirect("/profile/:id/store");
+        const id = req.user.id;
+        res.redirect(`/profile/${id}/store`);
       })
       .catch(err => {
         res.render("user/storeCreate", { message: "Something went wrong, please try again" });
