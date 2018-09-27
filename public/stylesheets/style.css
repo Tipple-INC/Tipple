@@ -17,7 +17,8 @@ a {
   /* the rest of your styling */ }
 
 #carousel {
-  position: relative; }
+  position: relative;
+  margin-top: 2px; }
 
 .logo {
   border: 1px solid red;
