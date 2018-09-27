@@ -21,7 +21,6 @@ a {
   margin-top: 2px; }
 
 .logo {
-  border: 1px solid red;
   width: 80%;
   margin: 50px auto;
   text-align: center;
@@ -32,14 +31,20 @@ a {
   width: 400px; }
 
 .homeButton {
-  border: 0.5px solid green;
+  color: black;
+  background-color: #ffc23d;
   padding: 10px;
-  text-decoration: none; }
+  text-decoration: none;
+  bottom: 200px; }
+
+.homeButton:hover {
+  color: yellow; }
 
 .fit {
   width: 100%;
   object-fit: cover;
-  height: 50vh; }
+  height: 50vh;
+  filter: grayscale(50%); }
 
 #upload_button {
   display: inline-block; }
@@ -55,5 +60,14 @@ a {
   width: 100%;
   object-fit: cover;
   height: 50vh; }
+
+.fit-logo {
+  width: 100%;
+  height: 210px;
+  font-family: 'Pacifico', cursive;
+  color: #942832; }
+
+.fit-logo h1 {
+  font-size: 98px; }
 
 /*# sourceMappingURL=style.css.map */

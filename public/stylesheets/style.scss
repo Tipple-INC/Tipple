@@ -30,7 +30,7 @@ a {
 }
 
 .logo {
-  border: 1px solid red;
+ 
   width: 80%;
   margin: 50px auto;
   text-align: center;
@@ -43,20 +43,29 @@ a {
 }
 
 .homeButton {
-  border: 0.5px solid green;
+  color: black;
+  background-color: #ffc23d;
   padding: 10px;
   text-decoration: none;
+  bottom: 200px;
+}
+
+.homeButton:hover {
+  color: yellow
+
 }
 
 .fit {
   width: 100%;
   object-fit: cover;
   height: 50vh;
+  filter: grayscale(50%);
 }
 
 #upload_button {
   display: inline-block;
 }
+
 #upload_button input[type=file] {
   display:none;
 }
@@ -72,7 +81,20 @@ a {
   height: 50vh;;
 }
 
-// .mainbg {
+.fit-logo {
+  width: 100%;
+  height: 210px; 
+  font-family: 'Pacifico', cursive;
+  color: rgba(148,40,50,1); 
+} 
+
+.fit-logo h1 {
+  font-size: 98px
+}
+
+
+
+// .mainbg 
 //   background: url("/images/Mulo.jpg") 0 0 no-repeat;
 //   background-size: cover;
 //   height: 700px;

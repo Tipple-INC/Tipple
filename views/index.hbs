@@ -16,24 +16,27 @@
   </div>
 </div>
 
-<div class="logo">
-  <h1>TIPPLE</h1>
-<img class="logoImg" src="/images/wine_glass.png" alt="Logo Tipple"> 
-{{#if user}}
-{{else}}
-<a class="homeButton" href="/auth/login">Login</a>
-<a class="homeButton" href="/auth/signup">Signup</a> 
-{{/if}}
+<div class="logo fluid-width fit-logo d-flex flex-column justify-content-between align-items-center">
+  <h1>Tipple</h1>
+  
+
+  {{#if user}}
+  {{else}}
+  <div class="container my-2">
+  <a class="homeButton btn btn-outline-warning" href="/auth/login">Login</a>
+  <a class="homeButton btn btn-outline-warning" href="/auth/signup">Signup</a>
+  </div>
+  {{/if}}
 </div>
 
 <div class="container info">
 
-<h2>Need a Wine Suggestion?</h2>
+{{!-- <h2>Need a Wine Suggestion?</h2>
 
 <p>Need to buy for an occasion? Maybe you're in the mood? Take our test, and try one of our suggestions!</p>
 
 <a class="homeButton btn btn-primary" href="/auth/login">For an Event</a>
-<a class="homeButton btn btn-primary" href="/auth/signup">For a Mood</a>
+<a class="homeButton btn btn-primary" href="/auth/signup">For a Mood</a> --}}
 
 </div>
 
