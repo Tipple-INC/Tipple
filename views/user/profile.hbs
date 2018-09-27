@@ -27,13 +27,16 @@
   {{/if}}
   </div>
 
-<div class="infoBox border d-flex flex-wrap flex-row">
+  <h5 class="subtitle">Wishlist:</h5>
+<div class="infoBox d-flex flex-wrap flex-row">
 <div class="wishlist d-flex flex-wrap flex-row">
-  <h3>Wishlist:</h3>
-  <div class="d-flex flex-wrap flex-row">
+  <div class="d-flex flex-wrap flex-row align-items-start justify-content-around">
 
     {{#each wine}}
     <div class="card" style="width: 18rem;">
+      <form class="removeWish" action="/profile/{{_id}}/removeWish" method="POST">
+      <button class="btn removeButton wine" type="submit" >remove</button>
+      </form>
       <img class="card-img-top wishCardImg" src="{{imgPath}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{wineName}}</h5>

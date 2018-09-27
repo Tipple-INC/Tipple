@@ -1,28 +1,37 @@
-<h1>These are the wines</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Our <span class="fontPacific">TOP 100</span> Spanish Wines</h1>
+    <p class="lead">Check out our list of Spain's top 100 rated wines</p>
+  </div>
+</div>
+
 
 <div class="d-flex flex-wrap justify-content-around">
 
 {{#each wished}}
 
-<form action="/social/wishlist" method="POST">
+<form >
 <input type="hidden" name="wineID" value="{{wine._id}}">
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{wine.imgPath}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{wine.wineName}}</h5>
-    <p class="card-text">User comments</p>
+    <p class="card-text">Score: {{wine.rating}}</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Region: {{wine.region}}</li>
     <li class="list-group-item">Vintage: {{wine.vintage}}</li>
     <li class="list-group-item">Color: {{wine.color}}</li>
   </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
+  <div>
     {{#if isWished}}
-      <p>Already wished</p>
+      {{!-- <form class="removeWish" action="/profile/{{wine._id}}/removeWish" method="POST">
+      <button class="btn removeButton" type="submit" >remove</button>
+      </form> --}}
     {{else}}
-    <button type="submit" class="btn btn-primary">Add to wishlist</button>
+    <form class="removeWish" action="/social/wishlist" method="POST">
+      <button class="btn addButton wine" type="submit" >add to wishlist</button>
+    </form>
     {{/if}}
   </div>
   </form>
