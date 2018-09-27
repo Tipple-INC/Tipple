@@ -79,7 +79,6 @@ router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
     // "components": "components=country:GB",
     // "bounds":     "55,-1|54,1",
     // "language":   "en",
-    // "region":     "uk"
   };
   
   getCoordinates = (( address, callback ) => {
@@ -93,10 +92,13 @@ router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
   });
   });
 
-  const coordinates = getCoordinates(address, function(coordinates) { console.log(coordinates[0], coordinates[1])});
+  const coordinates = getCoordinates(address, function(coordinates) {
+    
+   })
 
 
-  if (ownerID === "" || storename === "" || direction1 === "" || direction2 === "" || city === "" || zip === "") {
+
+  if (ownerID === "" || storename === "" || direction1 === "" || city === "" || zip === "") {
     res.render("user/storeCreate", { message: "Please fill all fields" });
     return;
   }
