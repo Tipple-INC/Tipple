@@ -6,42 +6,55 @@
   </div>
 </div>
 
-<h2>{{user.username}}, welcome to your personal page.</h2>
-
-<a href="/profile/{{user._id}}/update">Update your details</a>
-
-{{#if owner}}
-<a href="/profile/{{user._id}}/store">See Your Store Information</a>
-{{/if}}
-
-<h3>Wishlist:</h3>
-
-<div class="d-flex flex-wrap justify-content-around">
-
-  {{#each wine}}
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{imgPath}}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{wineName}}</h5>
-    <p class="card-text">User comments</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Region: {{region}}</li>
-    <li class="list-group-item">Vintage: {{vintage}}</li>
-    <li class="list-group-item">Color: {{color}}</li>
-  </ul>
+<div class="form-group uploadProfileCon" id="upload_button">
+  <form action="/profile/uploadCloud" class="uploadProfile" method="post" enctype="multipart/form-data">
+    <label>
+      <input type="file" ngf-select ng-model="new_files" ng-change="fs.uploadFiles(new_files)" multiple>
+      <span class="btn btn-primary">Profile Picture</span>
+    </label>
+  </form>
 </div>
 
-  {{/each}}
+<h2 class="text-center profile-title">{{user.username}}, welcome to your Tipple page.</h2>
 
-    
-    <h2>Upload your picture</h2>
-    <form action="/profile/uploadCloud" method="post" enctype="multipart/form-data">
-    <div class="form-group" id="upload_button">      
-      <label>
-      <input type="file" ngf-select ng-model="new_files" ng-change="fs.uploadFiles(new_files)" multiple>
-      <span class="btn btn-primary">Upload picture</span>
-    </label>
-    </div>   
-    </form>
-    
+<div class="container">
+
+  <div class="infoLinks">
+  <a class="infoLink" href="/profile/{{user._id}}/update">Update your details</a>
+
+  {{#if owner}}
+  <a class="infoLink" href="/profile/{{user._id}}/store">See Your Store Information</a>
+  {{/if}}
+  </div>
+
+<div class="infoBox border d-flex flex-wrap flex-row">
+<div class="wishlist d-flex flex-wrap flex-row">
+  <h3>Wishlist:</h3>
+  <div class="d-flex flex-wrap flex-row">
+
+    {{#each wine}}
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top wishCardImg" src="{{imgPath}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{wineName}}</h5>
+        <p class="card-text">User comments</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Region: {{region}}</li>
+        <li class="list-group-item">Vintage: {{vintage}}</li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+</div>
+<div class="wineQuote">
+<div>
+<p class="quote">"{{quote.quote}}"</p>
+</div>
+<div>
+<p class="author"><strong>{{quote.author}}</strong></p>
+
+</div>
+</div>
+
+</div>

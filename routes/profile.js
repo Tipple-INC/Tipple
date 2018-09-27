@@ -3,6 +3,7 @@ const passport = require('passport');
 const router = express.Router();
 const User = require('../models/User')
 const Store = require('../models/Store')
+const Quote = require('../models/Quote');
 const { ensureLoggedIn, ensureLoggedOut } = require('connect-ensure-login');
 const uploadCloud = require("../config/cloudinary.js");
 const GoogleMapsAPI = require("googlemaps");
@@ -22,11 +23,16 @@ const checkGuest  = checkRoles('GUEST');
 const checkOwner = checkRoles('STOREOWNER');
 
 router.get("/:id", ensureLoggedIn(), (req, res, next) => {
+  
   User.findById(req.params.id)
   .populate('wishlist')
   .then(wines => {
-    const owner = (req.user.role == "STOREOWNER")
-    res.render("user/profile", {wine: wines.wishlist, owner: owner});
+    Quote.find({}).then(quotes=>{
+      let random = Math.floor(Math.random() * Math.floor(quotes.length));
+      let quote = quotes[random]
+      const owner = (req.user.role == "STOREOWNER")
+      res.render("user/profile", {wine: wines.wishlist, owner: owner,quote});
+    })
   })
 });
 
