@@ -43,6 +43,12 @@ a {
   width: 100%;
 }
 
+.fit {
+  width: 100%;
+  object-fit: cover;
+  height: 50vh;;
+}
+
 // .mainbg {
 //   background: url("/images/Mulo.jpg") 0 0 no-repeat;
 //   background-size: cover;
