@@ -24,8 +24,6 @@ a {
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 10px 10px -10px #999;
   padding: 5px 0;
-  // border: 1px solid red;
-  /* the rest of your styling */
 }
 
 #carousel {
@@ -50,7 +48,7 @@ a {
   margin: 0px;
 }
 
-.logo {
+.logo { 
   width: 80%;
   margin: 50px auto;
   text-align: center;
@@ -80,16 +78,19 @@ a {
 }
 
 .homeButton {
-  color: black;
+  color: #932832;
   background-color: #ffc23d;
   padding: 10px;
   text-decoration: none;
   bottom: 200px;
+  font-family: 'Pacifico', cursive;
+  border: none;
+ 
 }
 
 .homeButton:hover {
-  color: yellow
-
+  color: #932832;
+  background-color: #ffc107a3;
 }
 
 .fit {
@@ -219,3 +220,24 @@ a {
   height: 500px;
   width: 100%;
 }
+
+.fit-logo {
+  width: 100%;
+  height: 210px; 
+  font-family: 'Pacifico', cursive;
+  color: rgba(148,40,50,1); 
+} 
+
+.fit-logo h1 {
+  font-size: 98px
+}
+
+.forms .wrapper {
+  margin-right: 50px;
+  margin-left: 80px
+}
+
+.wrapper h2 {
+  font-family: 'Pacifico', cursive;
+}
+
