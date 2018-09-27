@@ -8,7 +8,8 @@ const storeSchema = new Schema({
   direction2: String,
   city: String,
   zip: String,
-  coordinates: Array
+  coordinates: Array,
+  description: String
 }, {
   timestamps: {
     createdAt: 'created_at',

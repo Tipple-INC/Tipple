@@ -24,16 +24,12 @@
     </div>
   </div>
   <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        I agree that this is all valid information
-      </label>
-    </div>
+    <label for="description">Description / Specialities</label>
+    <input name="description" type="text" class="form-control" id="shopdescription" placeholder="The user will see this description">
   </div>
   <br>
   {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
-  <button type="submit" class="btn btn-primary">Create Account</button>
+  <button type="submit" class="btn btn-primary">Create Shop</button>
 </form>

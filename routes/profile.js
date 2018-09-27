@@ -48,8 +48,12 @@ router.post('/:id/update', ensureLoggedIn(), (req, res, next) => {
 //================== STORE INFORMATION ============================
 
 router.get("/:id/store", ensureLoggedIn(), checkOwner, (req, res, next) => {
+  const owner = req.params.id;
+  Store.find({ownerID: owner})
+  .then(shops => {
+    res.render("user/store", {shops});
+  })
 
-  res.render("user/store");
 });
 
 router.get("/:id/store/create", ensureLoggedIn(), checkOwner, (req, res, next) => {
@@ -74,6 +78,7 @@ router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
   const city = req.body.city;
   const zip = req.body.zip;
   const address = `${storename}, ${direction1}, ${direction2}, ${city}, ${zip}`;
+  const description = req.body.description;
   var geocodeParams = {
     "address":    address,
     // "components": "components=country:GB",
@@ -93,40 +98,43 @@ router.post('/:id/store/create', ensureLoggedIn(), (req, res, next) => {
   });
 
   const coordinates = getCoordinates(address, function(coordinates) {
-    
+    console.log(coordinates[0])
+
+    if (ownerID === "" || storename === "" || direction1 === "" || city === "") {
+      res.render("user/storeCreate", { message: "Please fill all fields" });
+      return;
+    }
+  
+    Store.findOne({$and: [{ storename }, {direction1}]}, "storename", (err, store) => {
+      if (store !== null) {
+        res.render("user/storeCreate", { message: "This store already exists" });
+        return;
+      }
+  
+      const newStore = new Store({
+        ownerID,
+        storename,
+        direction1,
+        direction2,
+        city,
+        zip,
+        coordinates: [coordinates[0], coordinates[1]],
+        description
+      });
+  
+      newStore.save()
+      .then(() => {
+        res.redirect("/profile/:id/store");
+      })
+      .catch(err => {
+        res.render("user/storeCreate", { message: "Something went wrong, please try again" });
+      })
+    });
    })
 
 
 
-  if (ownerID === "" || storename === "" || direction1 === "" || city === "" || zip === "") {
-    res.render("user/storeCreate", { message: "Please fill all fields" });
-    return;
-  }
-
-  Store.findOne({$and: [{ storename }, {direction1}]}, "storename", (err, store) => {
-    if (store !== null) {
-      res.render("user/storeCreate", { message: "This store already exists" });
-      return;
-    }
-
-    const newStore = new Store({
-      ownerID,
-      storename,
-      direction1,
-      direction2,
-      city,
-      zip,
-      coordinates
-    });
-
-    newStore.save()
-    .then(() => {
-      res.redirect("/:id/store");
-    })
-    .catch(err => {
-      res.render("user/storeCreate", { message: "Something went wrong, please try again" });
-    })
-  });
+  
 });
 
 

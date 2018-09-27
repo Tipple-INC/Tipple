@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startMap() {
   // Store Ironhack's coordinates
-  const store = { lat: 41.3977381,  lng: 2.190471916 };
+  const store = { lat: window.coordinates[0],  lng: window.coordinates[1] };
 
   // Map initialization
   const map = new google.maps.Map(document.getElementById('map'), {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lng: store.lng
     },
     map: map,
-    title: "Barcelona Campus"
+    // title: `${window.storetitle}`
   });
 
 
@@ -30,16 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Center map with user location
       map.setCenter(store);
-
-      // Add a marker for your user location
-      const ironHackBCNMarker = new google.maps.Marker({
-        position: {
-          lat: user_location.lat,
-          lng: user_location.lng
-        },
-        map: map,
-        title: "You are here"
-      });
 
     }, function () {
       console.log('Error in the geolocation service.');

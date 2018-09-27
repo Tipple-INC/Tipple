@@ -1,10 +1,12 @@
+require('dotenv').load();
+require('dotenv').config()
 const mongoose = require("mongoose");
 const Wine = require("../models/Wine");
 var axios = require('axios')
 
 
 mongoose
-  .connect('mongodb://localhost/tipple', {useNewUrlParser: true})
+  .connect(process.env.DBURL, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -94,7 +96,7 @@ mongoose
 const token = "fasdfasdf"
 const instance = axios.create({
     baseURL: 'https://api.globalwinescore.com',
-    headers: {'Authorization': `Token 554c6f65c5ea3a2902f84409bdde855d684079a4`}
+    headers: {'Authorization': process.env.API_KEY}
   })
 
 //   const api_key: process.env.API_KEY

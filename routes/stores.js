@@ -19,8 +19,7 @@ router.get('/:id', (req, res, next) => {
 
 Store.findById(req.params.id)
 .then(store => {
-
-  res.render('stores/store', {store})
+  res.render('stores/store', {store: store, coordinates: JSON.stringify(store.coordinates)})
 })
     
   });

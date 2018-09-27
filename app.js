@@ -1,3 +1,4 @@
+require('dotenv').load();
 require('dotenv').config();
 
 const bodyParser   = require('body-parser');
@@ -15,7 +16,7 @@ const flash      = require("connect-flash");
     
 
 mongoose
-  .connect('mongodb://localhost/tipple', {useNewUrlParser: true})
+  .connect(process.env.DBURL, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
