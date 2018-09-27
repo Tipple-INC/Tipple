@@ -34,6 +34,9 @@
 
     {{#each wine}}
     <div class="card" style="width: 18rem;">
+      <form action="/profile/{{_id}}/removeWish" method="POST">
+      <button type="submit" >remove</button>
+      </form>
       <img class="card-img-top wishCardImg" src="{{imgPath}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{wineName}}</h5>

@@ -2,7 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 .min-height {
-  min-height: 680px; }
+  min-height: 700px; }
 
 a {
   color: #00B7FF; }
@@ -95,6 +95,9 @@ a {
 
 .card {
   margin-bottom: 30px; }
+
+.card a {
+  text-align: right; }
 
 .wishlist {
   width: 70%; }

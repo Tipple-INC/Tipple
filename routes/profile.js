@@ -36,6 +36,18 @@ router.get("/:id", ensureLoggedIn(), (req, res, next) => {
   })
 });
 
+
+
+router.post("/:id/removeWish", (req, res, next) => { 
+  const wine = req.params.id;
+  User.findByIdAndUpdate({_id: req.user.id}, { $pull: { wishlist: wine } })
+  .then (() => {
+    res.render("user/profile");
+  })
+});
+
+
+
 router.get('/:id/update', ensureLoggedIn(), (req, res, next) => {
     res.render("user/update")
 });
