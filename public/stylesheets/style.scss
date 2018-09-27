@@ -32,6 +32,10 @@ a {
   position: relative;
 }
 
+.fontPacific {
+  font-family: 'Pacifico', cursive;
+}
+
 .footer {
   right: 0;
   bottom: 0;
@@ -130,10 +134,15 @@ a {
 
 .card {
   margin-bottom: 30px;
+  margin-right: 15px;
 }
 
 .card a {
   text-align: right;
+}
+
+.card-title {
+  margin-top: 25px;
 }
 
 .wishlist {
@@ -149,13 +158,42 @@ a {
   position: relative;
 }
 
+.wine {
+  right: 5px;
+}
+
+.shop {
+  left: 5px;
+}
+
 .removeButton {
+  position: absolute;
+  top: 5px;
+  border: 0.5px solid grey;
+  font-family: 'Pacifico', cursive;
+  padding: 0 5px 5px;
+  background-color: #b81d1e;
+  color: white;
+}
+
+.addButton {
   position: absolute;
   right: 5px;
   top: 5px;
   border: 0.5px solid grey;
   font-family: 'Pacifico', cursive;
   padding: 0 5px 5px;
+  background-color: #ffc23d;
+  color: #932832;
+}
+
+.addButton:hover {
+  color: #932832;
+  background-color: #ffc107a3;
+}
+
+.addButton a {
+  color: #932832;
 }
 
 .infoBox h3 {

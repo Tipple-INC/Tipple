@@ -39,6 +39,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 }
   startMap();
-  
 
 }, false);

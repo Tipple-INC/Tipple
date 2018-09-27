@@ -6,15 +6,18 @@
 
 <div class="d-flex flex-wrap justify-content-around">
 
-{{#each shops}}
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{storename}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{city}}</h6>
-    <p class="card-text">{{description}}</p>
-    <a href="/stores/{{_id}}" class="card-link">Find out more...</a>
+  {{#each shops}}
+  <div class="card" style="width: 18rem;">
+    <form class="removeWish" action="/profile/{{_id}}/removeShop" method="POST">
+      <button class="btn removeButton wine" type="submit">remove</button>
+    </form>
+    <div class="card-body">
+      <h5 class="card-title">{{storename}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{city}}</h6>
+      <p class="card-text">{{description}}</p>
+      <button class="btn addButton shop"><a href="/stores/{{_id}}" class="card-link">Find out more...</a></button>
+    </div>
   </div>
-</div>
-{{/each}}
+  {{/each}}
 
 </div>

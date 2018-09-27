@@ -46,6 +46,13 @@ router.post("/:id/removeWish", (req, res, next) => {
   })
 });
 
+router.post("/:id/removeShop", (req, res, next) => { 
+  const shop = req.params.id;
+  Store.findByIdAndRemove(shop)
+  .then (() => {
+    res.redirect(`/profile/${req.user.id}/store`);
+  })
+});
 
 
 router.get('/:id/update', ensureLoggedIn(), (req, res, next) => {
