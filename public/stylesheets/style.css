@@ -201,4 +201,17 @@ a {
 .wrapper h2 {
   font-family: 'Pacifico', cursive; }
 
+#postJumbo {
+  position: relative; }
+
+#postImage {
+  position: absolute;
+  border: 0.5px solid grey;
+  font-family: 'Pacifico', cursive;
+  padding: 0 10px 5px;
+  background-color: #ffc23d;
+  color: #932832;
+  font-size: 1.2em;
+  border-radius: 2px; }
+
 /*# sourceMappingURL=style.css.map */

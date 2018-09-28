@@ -1,11 +1,10 @@
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
+  <div id="postJumbo" class="container">
     <h1 class="display-4">The <span class="fontPacific">latest</span> from the <span class="fontPacific">Tipplers</span></h1>
-    <p class="lead">All the latest updates from all of you...</p>
+    <p class="lead">The latest updates from all of you...</p>
+  <a id="postImage" href="/social/postImage">Post a Wine!</a>
   </div>
 </div>
-
-<a href="/social/postImage">Post a Wine!</a>
 
 <div class="d-flex flex-wrap justify-content-around">
 
@@ -23,7 +22,6 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Region: {{region}}</li>
     <li class="list-group-item">Vintage: {{vintage}}</li>
-    <li class="list-group-item">Color: {{color}}</li>
   </ul>
   <div>
     {{#if isWished}}

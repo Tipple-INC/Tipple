@@ -108,7 +108,7 @@ router.post("/:id/store/create", ensureLoggedIn(), (req, res, next) => {
   const direction2 = req.body.direction2;
   const city = req.body.city;
   const zip = req.body.zip;
-  const address = `${storename}, ${direction1}, ${direction2}, ${city}, ${zip}`;
+  const address = `${direction1}, ${direction2}, ${city}, ${zip}`;
   const description = req.body.description;
   var geocodeParams = {
     address: address
