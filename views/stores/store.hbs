@@ -1,10 +1,16 @@
 <script>
-  window.coordinates = {{{coordinates}}}
+  window.coordinates = {{{ coordinates }}}
 </script>
-<h2>{{store.storename}}</h2>
-<h5>{{store.direction1}}, {{store.direction2}} 
-  </br>
-  {{store.city}}, {{store.zip}}</h5>
-  </br>
-<p>{{store.description}}</p>
-<div id="map"></div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"><span class="fontPacific">{{store.storename}}</span></h1>
+      <p class="lead">{{store.direction1}}, {{store.city}}, {{store.zip}}</p>
+    </div>
+  </div>
+
+<div class="container">
+  <p>{{store.description}}</p>
+  <div id="map"></div>
+
+</div>
