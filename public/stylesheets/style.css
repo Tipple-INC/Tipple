@@ -17,6 +17,7 @@ a {
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 10px 10px -10px #999;
   padding: 5px 0;
+  z-index: 0;
   /* the rest of your styling */ }
 
 #carousel {
@@ -76,8 +77,17 @@ a {
 
 .intro {
   margin: 0 auto;
-  width: 150px;
-  margin-top: -20px; }
+  width: 200px;
+  margin-top: -20px;
+  position: relative; }
+
+.profilePic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover; }
+
+.profilePic img {
+  width: 200px; }
 
 .profile-title {
   margin: 20px 0;
@@ -91,7 +101,7 @@ a {
   margin: 0 auto;
   position: absolute;
   top: 140px;
-  left: 825px; }
+  left: 875px; }
 
 .infoLinks {
   text-align: center;

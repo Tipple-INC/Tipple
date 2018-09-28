@@ -1,5 +1,5 @@
 <div class="intro">
-  <div class="text-center">
+  <div class="text-center" style="width: 200px">
     {{#if user}}
     <img class="img-thumbnail profilePic" src="{{user.imgPath}}" alt="">
     {{/if}}
@@ -9,7 +9,7 @@
 <div class="form-group uploadProfileCon" id="upload_button">
   <form action="/profile/uploadCloud" class="uploadProfile" method="post" enctype="multipart/form-data">
     <label>
-      <input type="file" ngf-select ng-model="new_files" ng-change="fs.uploadFiles(new_files)" multiple>
+      <input type="file" name="photo" ngf-select ng-model="new_files" onchange="this.form.submit()" ng-change="fs.uploadFiles(new_files)" multiple>
       <span class="btn btn-primary">Profile Picture</span>
     </label>
   </form>
