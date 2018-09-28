@@ -59,6 +59,14 @@ hbs.registerHelper('ifUndefined', (value, options) => {
       return options.fn(this);
   }
 });
+
+hbs.registerHelper('ifvalue', function (user, options) {
+  if (user.role === 'STOREOWNER' ) {
+    return options.fn(this)
+  } else {
+    return options.inverse(this);
+  }
+});
   
 
 // default value for title local

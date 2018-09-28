@@ -8,6 +8,9 @@ const { ensureLoggedIn, ensureLoggedOut } = require("connect-ensure-login");
 const uploadCloud = require("../config/cloudinary.js");
 const GoogleMapsAPI = require("googlemaps");
 
+const bcrypt = require("bcrypt");
+const bcryptSalt = 10;
+
 function checkRoles(role) {
   return function(req, res, next) {
     if (req.isAuthenticated() && req.user.role === role) {
@@ -56,19 +59,31 @@ router.post("/:id/removeShop", (req, res, next) => {
 });
 
 router.get("/:id/update", ensureLoggedIn(), (req, res, next) => {
-  res.render("user/update");
+  
+    res.render("user/update");
 });
 
 router.post("/:id/update", ensureLoggedIn(), (req, res, next) => {
   const { username, email, password } = req.body;
+  let role = req.body.storeowner;
+
+  if (role == null) {
+    role = 'GUEST';
+  }
+
+  const salt = bcrypt.genSaltSync(bcryptSalt);
+  const hashPass = bcrypt.hashSync(password, salt);
+
   User.update(
     { _id: req.params.id },
-    { $set: { username, email, password } },
+    { $set: { username, 
+      email, 
+      password: hashPass, 
+      role } },
     { new: true }
   )
-    .then(() => {
-      const id = req.user.id;
-      res.redirect("/profile/:id");
+    .then(user => {
+      res.redirect(`/profile/${req.user.id}`);
     })
     .catch(error => {
       console.log(error);
