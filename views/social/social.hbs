@@ -10,7 +10,7 @@
 
 {{#each wished}}
 
-<form >
+<form class="removeWish" action="/social/wishlist" method="POST">
 <input type="hidden" name="wineID" value="{{wine._id}}">
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{wine.imgPath}}" alt="Card image cap">
@@ -29,9 +29,8 @@
       <button class="btn removeButton" type="submit" >remove</button>
       </form> --}}
     {{else}}
-    <form class="removeWish" action="/social/wishlist" method="POST">
       <button class="btn addButton wine" type="submit" >add to wishlist</button>
-    </form>
+    
     {{/if}}
   </div>
   </form>

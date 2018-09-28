@@ -12,17 +12,18 @@
 {{#each posts}}
 
 <form >
-<input type="hidden" name="wineID" value="{{wine._id}}">
+<input type="hidden" name="wineID" value="{{_id}}">
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{wine.imgPath}}" alt="Card image cap">
+  <img class="card-img-top" src="{{picPath}}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{wine.wineName}}</h5>
-    <p class="card-text">Score: {{wine.rating}}</p>
+    <p class="card-text">Uploaded by: <strong>{{username}}</strong></p>
+    <h5 class="card-title">{{wineName}}</h5>
+    <p class="card-text">Score: {{score}}/10</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Region: {{wine.region}}</li>
-    <li class="list-group-item">Vintage: {{wine.vintage}}</li>
-    <li class="list-group-item">Color: {{wine.color}}</li>
+    <li class="list-group-item">Region: {{region}}</li>
+    <li class="list-group-item">Vintage: {{vintage}}</li>
+    <li class="list-group-item">Color: {{color}}</li>
   </ul>
   <div>
     {{#if isWished}}
